@@ -94,6 +94,10 @@ export const statement = "Every journey leaves something behind.";
 export const about = {
   intro:
     "Lammoth is a solo project working in atmospheric black metal, blackgaze and electronic music, based in Asheville.",
+  portrait: {
+    src: "/images/lammoth-portrait.jpg",
+    alt: "Lammoth photographed outdoors, standing against a dense wall of green foliage in a black battle vest and cap.",
+  },
   artist: [
     "Across the catalogue the credits stay short. Lammoth writes the music and lyrics, plays the instruments, and handles the mixing. Outside help arrives only where it is genuinely needed: mastering, additional sound design, cover artwork.",
     "That shape has held from the first single in 2024 through to Onward. It is a project run at a scale where one person can keep hold of every decision.",

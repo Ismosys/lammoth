@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import { about, collaborators, site } from "@/content/site";
@@ -13,21 +14,64 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="vignette relative flex min-h-[70svh] items-end overflow-hidden pb-20 pt-40">
+      {/*
+        The portrait sits behind the headline on wide screens and stacks below it
+        on narrow ones, so the type never has to compete with the figure for the
+        same space on a phone.
+      */}
+      <section className="relative overflow-hidden pb-20 pt-36 sm:pt-44">
         <div
           className="pointer-events-none absolute inset-0"
           aria-hidden="true"
           style={{
             background:
-              "radial-gradient(90% 60% at 25% 20%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 62%)",
+              "radial-gradient(90% 60% at 20% 15%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 62%)",
           }}
         />
-        <div className="shell relative z-10">
-          <p className="label">About</p>
-          <h1 className="display-xl mt-6" style={{ maxWidth: "12ch" }}>
-            Behind the Blasphemy
-          </h1>
-          <p className="lede mt-9">{about.intro}</p>
+
+        <div className="shell relative z-10 grid items-end gap-12 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-7 xl:col-span-6">
+            <p className="label">About</p>
+            <h1
+              className="display-xl mt-6"
+              style={{ fontSize: "clamp(2.75rem, 7.6vw, 7.5rem)" }}
+            >
+              Behind the Blasphemy
+            </h1>
+            <p className="lede mt-9">{about.intro}</p>
+          </div>
+
+          <div className="lg:col-span-5 lg:col-start-8 xl:col-span-5 xl:col-start-8">
+            <div className="relative">
+              <div
+                className="absolute -inset-8 -z-10 blur-3xl"
+                aria-hidden="true"
+                style={{
+                  background:
+                    "radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent-2) 24%, transparent), transparent 70%)",
+                }}
+              />
+              <Image
+                src={about.portrait.src}
+                alt={about.portrait.alt}
+                width={1200}
+                height={1200}
+                priority
+                sizes="(max-width: 1024px) 92vw, 40vw"
+                className="w-full object-cover"
+                style={{ boxShadow: "0 40px 110px rgba(0,0,0,0.6)" }}
+              />
+              {/* Grades the photograph toward the site ground so it sits in the page. */}
+              <div
+                className="pointer-events-none absolute inset-0"
+                aria-hidden="true"
+                style={{
+                  background:
+                    "linear-gradient(to top, color-mix(in srgb, var(--ground) 55%, transparent) 0%, transparent 45%)",
+                }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 

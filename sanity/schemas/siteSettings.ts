@@ -32,6 +32,21 @@ export const siteSettings = {
       type: "object",
       fields: [
         { name: "intro", title: "Intro", type: "text", rows: 2 },
+        {
+          name: "portrait",
+          title: "Artist photograph",
+          type: "image",
+          options: { hotspot: true },
+          description: "Shown on the about hero and the home page about section.",
+          fields: [
+            {
+              name: "alt",
+              title: "Alternative text",
+              type: "string",
+              description: "Describe the photograph for screen readers.",
+            },
+          ],
+        },
         { name: "artist", title: "The Artist", type: "array", of: [{ type: "text", rows: 4 }] },
         { name: "project", title: "The Project", type: "array", of: [{ type: "text", rows: 4 }] },
         { name: "world", title: "The World", type: "array", of: [{ type: "text", rows: 4 }] },
