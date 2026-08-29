@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import type { Release } from "@/lib/types";
-import { themeVars } from "@/lib/theme";
+import { paperVars } from "@/lib/theme";
 
 /**
  * A release presented as an artifact rather than a catalogue tile. Each card
@@ -17,7 +17,7 @@ export default function ReleaseCard({ release }: { release: Release }) {
   return (
     <Link
       href={`/music/${release.slug}`}
-      style={themeVars(release.theme)}
+      style={paperVars(release.theme)}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onFocus={() => setHover(true)}

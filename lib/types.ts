@@ -8,27 +8,19 @@
  */
 
 /** Per release colour identity, derived from that release's own cover artwork. */
+/**
+ * A release's colour identity, sampled from its own cover artwork.
+ *
+ * The site is parchment throughout, so an era is expressed as a change of
+ * paper stock rather than a change of lighting.
+ */
 export type ReleaseTheme = {
-  /** Primary accent. Drives headings, rules, and interactive states. */
-  accent: string;
-  /** Secondary accent. Used sparingly for depth and hover states. */
-  accent2: string;
-  /** Page ground for this release. Always a biased near black, never pure black. */
-  ground: string;
-  /** Raised surface sitting above the ground. */
-  raised: string;
-  /** Warm off white used for body copy against this ground. */
-  paper: string;
+  /** Paper tint for this release. A parchment biased toward the cover. */
+  tint: string;
+  /** Accent dark enough to hold contrast on that tint. */
+  accentOnLight: string;
   /** Short human description of the atmosphere, shown in the archives timeline. */
   atmosphere: string;
-  /**
-   * Light variants, used where a release appears against the parchment shell
-   * rather than in its own dark room. The archives timeline uses these so each
-   * era still shifts the page without turning the whole run black.
-   */
-  tint: string;
-  /** Accent dark enough to hold contrast on the tint above. */
-  accentOnLight: string;
 };
 
 export type Track = {

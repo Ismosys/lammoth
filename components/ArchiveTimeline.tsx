@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Release } from "@/lib/types";
-import { archiveVars, formatReleaseDate, totalRuntime } from "@/lib/theme";
+import { paperVars, formatReleaseDate, totalRuntime } from "@/lib/theme";
 
 /**
  * Chronological timeline.
@@ -42,7 +42,7 @@ export default function ArchiveTimeline({ releases }: { releases: Release[] }) {
   return (
     <div
       style={{
-        ...archiveVars(active.theme),
+        ...paperVars(active.theme),
         background: "var(--ground)",
         transition: "background 900ms cubic-bezier(0.16,1,0.3,1)",
       }}
@@ -74,7 +74,7 @@ export default function ArchiveTimeline({ releases }: { releases: Release[] }) {
           }}
           aria-labelledby={`era-${release.slug}`}
           className="relative flex min-h-[auto] items-center py-20 lg:min-h-[92svh] lg:py-24"
-          style={archiveVars(release.theme)}
+          style={paperVars(release.theme)}
         >
           <div className="shell grid w-full items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div

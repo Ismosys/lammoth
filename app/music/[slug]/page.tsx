@@ -7,7 +7,7 @@ import Tracklist from "@/components/Tracklist";
 import ReleaseCard from "@/components/ReleaseCard";
 import { getRelease, releases } from "@/content/releases";
 import { site } from "@/content/site";
-import { formatReleaseDate, themeVars, totalRuntime } from "@/lib/theme";
+import { formatReleaseDate, paperVars, totalRuntime } from "@/lib/theme";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -73,8 +73,8 @@ export default async function ReleasePage({ params }: Props) {
   };
 
   return (
-    /* Every release carries its own palette. Nothing below reads the slug. */
-    <div style={themeVars(release.theme)}>
+    /* Every release carries its own paper stock. Nothing below reads the slug. */
+    <div style={paperVars(release.theme)}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -90,7 +90,7 @@ export default async function ReleasePage({ params }: Props) {
           aria-hidden="true"
           style={{
             background:
-              "radial-gradient(100% 70% at 75% 15%, color-mix(in srgb, var(--accent) 20%, transparent) 0%, transparent 60%)",
+              "radial-gradient(100% 70% at 75% 15%, color-mix(in srgb, var(--accent) 11%, transparent) 0%, transparent 62%)",
           }}
         />
         <div className="shell relative z-10 grid w-full items-end gap-12 lg:grid-cols-12">
