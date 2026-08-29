@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design system.
+
+  The shell is a warm biased near black rather than pure #000, and body copy is a
+  warm off white rather than pure #fff. Each release overrides --accent, --accent-2,
+  --ground, --raised and --paper at the section or page level, so an era carries its
+  own colour identity without any component knowing which release it is rendering.
+
+  Type is fluid via clamp() rather than a viewport scaled root font size. That keeps
+  the composition responsive while still honouring a reader's browser font setting,
+  which matters on the longer form pages.
+*/
+
+:root {
+  /* Shell defaults. Onward is the current era, so its palette leads. */
+  --void: #08090610;
+  --ground: #0b0c08;
+  --deep: #0b0c08;
+  --raised: #15170f;
+  --paper: #efe8d3;
+  --muted: #8b8a76;
+  --line: #23261b;
+
+  --accent: #d98a46;
+  --accent-2: #8ca84a;
+
+  /* One easing curve for the whole site. */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.3s;
+  --dur-slow: 0.6s;
+
+  /* Section rhythm. Deliberately large. */
+  --section: clamp(6rem, 13vw, 15rem);
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  background: var(--ground);
+  color: var(--paper);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background var(--dur-slow) var(--ease), color var(--dur-slow) var(--ease);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--ground);
+}
+
+/* Focus visibility, required on every interactive element. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@layer components {
+  /* ---------- Type scale ----------
+     Tracking tightens as size grows, leading drops below 1 at display sizes,
+     and uppercase labels take positive tracking. */
+
+  .display-xl {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: clamp(3.4rem, 12vw, 11rem);
+    line-height: 0.86;
+    letter-spacing: -0.045em;
+    font-weight: 500;
+  }
+
+  .display-lg {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: clamp(2.6rem, 7.5vw, 6.5rem);
+    line-height: 0.94;
+    letter-spacing: -0.035em;
+    font-weight: 500;
+  }
+
+  .display-md {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: clamp(2rem, 4.6vw, 3.75rem);
+    line-height: 1.02;
+    letter-spacing: -0.028em;
+    font-weight: 500;
+  }
+
+  .display-sm {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+  }
+
+  .label {
+    font-family: var(--font-sans), sans-serif;
+    font-size: 0.6875rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .lede {
+    font-size: clamp(1.0625rem, 1.5vw, 1.3125rem);
+    line-height: 1.55;
+    letter-spacing: -0.008em;
+    max-width: 46ch;
+    color: color-mix(in srgb, var(--paper) 82%, transparent);
+  }
+
+  .body-copy {
+    max-width: 60ch;
+    color: color-mix(in srgb, var(--paper) 76%, transparent);
+    letter-spacing: -0.005em;
+  }
+
+  /* ---------- Layout ---------- */
+
+  .shell {
+    width: 100%;
+    max-width: 96rem;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  .section {
+    padding-block: var(--section);
+  }
+
+  .rule {
+    height: 1px;
+    background: var(--line);
+    border: 0;
+    margin: 0;
+  }
+
+  /* ---------- Buttons ---------- */
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 1.05rem 1.9rem;
+    border: 1px solid var(--accent);
+    color: var(--ground);
+    background: var(--accent);
+    transition: background var(--dur-fast) var(--ease),
+      color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+  }
+
+  .btn:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--paper);
+    border-color: color-mix(in srgb, var(--paper) 28%, transparent);
+  }
+
+  .btn-ghost:hover {
+    background: var(--paper);
+    color: var(--ground);
+    border-color: var(--paper);
+  }
+}
+
+/* ---------- Film grain ----------
+   A single tiled SVG noise layer. Static rather than animated, so it costs
+   nothing after first paint and does not fight the reduced motion setting. */
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+/* Vignette used behind hero imagery. */
+.vignette::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    transparent 35%,
+    color-mix(in srgb, var(--ground) 85%, transparent) 100%
+  );
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--ground);
+  padding: 0.85rem 1.25rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
