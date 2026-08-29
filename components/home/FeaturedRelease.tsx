@@ -24,7 +24,7 @@ export default function FeaturedRelease() {
                 height={1200}
                 sizes="(max-width: 1024px) 92vw, 42vw"
                 className="w-full"
-                style={{ boxShadow: "0 30px 90px rgba(0,0,0,0.55)" }}
+                style={{ boxShadow: "var(--shadow-art)" }}
               />
             </div>
           </Reveal>

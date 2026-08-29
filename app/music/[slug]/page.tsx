@@ -129,7 +129,7 @@ export default async function ReleasePage({ params }: Props) {
               priority
               sizes="(max-width: 1024px) 90vw, 40vw"
               className="w-full"
-              style={{ boxShadow: "0 40px 110px rgba(0,0,0,0.6)" }}
+              style={{ boxShadow: "var(--shadow-art)" }}
             />
           </div>
         </div>

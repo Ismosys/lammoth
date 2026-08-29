@@ -59,7 +59,7 @@ export default function AboutPage() {
                 priority
                 sizes="(max-width: 1024px) 92vw, 40vw"
                 className="w-full object-cover"
-                style={{ boxShadow: "0 40px 110px rgba(0,0,0,0.6)" }}
+                style={{ boxShadow: "var(--shadow-art)" }}
               />
               {/* Grades the photograph toward the site ground so it sits in the page. */}
               <div
@@ -67,7 +67,7 @@ export default function AboutPage() {
                 aria-hidden="true"
                 style={{
                   background:
-                    "linear-gradient(to top, color-mix(in srgb, var(--ground) 55%, transparent) 0%, transparent 45%)",
+                    "linear-gradient(to top, color-mix(in srgb, var(--ground) 32%, transparent) 0%, transparent 45%)",
                 }}
               />
             </div>
