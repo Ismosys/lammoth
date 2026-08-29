@@ -52,7 +52,7 @@ export default function SiteHeader() {
         <div className="shell flex items-center justify-between gap-6 py-5">
           <Link
             href="/"
-            className="group flex flex-col leading-none"
+            className="group flex min-h-[2.75rem] flex-col justify-center leading-none"
             aria-label={`${site.name}, home`}
           >
             <span
@@ -201,7 +201,7 @@ export default function SiteHeader() {
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="label transition-colors duration-300 hover:text-[var(--accent)]"
+                  className="tap label transition-colors duration-300 hover:text-[var(--accent)]"
                 >
                   {s.label}
                 </a>

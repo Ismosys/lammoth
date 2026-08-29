@@ -38,7 +38,7 @@ export default function ContactPage() {
               <p className="label">Direct</p>
               <a
                 href={`mailto:${site.contactEmail}`}
-                className="mt-4 block break-all text-lg transition-colors duration-300 hover:text-[var(--accent)]"
+                className="tap mt-3 break-all text-lg transition-colors duration-300 hover:text-[var(--accent)]"
               >
                 {site.contactEmail}
               </a>
@@ -56,7 +56,7 @@ export default function ContactPage() {
                       href={s.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="display-sm transition-colors duration-300 hover:text-[var(--accent)]"
+                      className="tap display-sm transition-colors duration-300 hover:text-[var(--accent)]"
                     >
                       {s.label}
                     </a>

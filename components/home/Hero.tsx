@@ -186,9 +186,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.9 }}
         >
-          <span className="label" style={{ fontSize: "0.5625rem" }}>
-            Scroll
-          </span>
+          <span className="label">Scroll</span>
           <span
             className="block h-px flex-1 max-w-24"
             style={{ background: "var(--line)" }}

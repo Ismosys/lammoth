@@ -5,11 +5,6 @@ import { contactCategories } from "@/content/site";
 
 type Errors = Partial<Record<"name" | "email" | "subject" | "message" | "category", string>>;
 
-const fieldStyle = {
-  borderBottom: "1px solid var(--line)",
-  color: "var(--paper)",
-} as const;
-
 export default function ContactForm() {
   const [category, setCategory] = useState(contactCategories[0].value);
   const [errors, setErrors] = useState<Errors>({});
@@ -78,7 +73,7 @@ export default function ContactForm() {
             return (
               <label
                 key={c.value}
-                className="cursor-pointer px-4 py-3 text-xs uppercase tracking-[0.16em] transition-colors duration-300"
+                className="flex min-h-[2.75rem] cursor-pointer items-center px-4 py-3 text-xs uppercase tracking-[0.16em] transition-colors duration-300"
                 style={{
                   border: `1px solid ${on ? "var(--accent)" : "var(--line)"}`,
                   color: on ? "var(--ground)" : "var(--paper)",
@@ -116,8 +111,7 @@ export default function ContactForm() {
             autoComplete="name"
             aria-invalid={Boolean(errors.name)}
             aria-describedby={errors.name ? "name-error" : undefined}
-            className="mt-3 w-full bg-transparent px-0 py-3 outline-none"
-            style={fieldStyle}
+            className="field mt-3"
           />
           {errors.name && (
             <p id="name-error" className="mt-2 text-sm" style={{ color: "#E4785F" }}>
@@ -138,8 +132,7 @@ export default function ContactForm() {
             autoComplete="email"
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? "email-error" : undefined}
-            className="mt-3 w-full bg-transparent px-0 py-3 outline-none"
-            style={fieldStyle}
+            className="field mt-3"
           />
           {errors.email && (
             <p id="email-error" className="mt-2 text-sm" style={{ color: "#E4785F" }}>
@@ -160,8 +153,7 @@ export default function ContactForm() {
           required
           aria-invalid={Boolean(errors.subject)}
           aria-describedby={errors.subject ? "subject-error" : undefined}
-          className="mt-3 w-full bg-transparent px-0 py-3 outline-none"
-          style={fieldStyle}
+          className="field mt-3"
         />
         {errors.subject && (
           <p id="subject-error" className="mt-2 text-sm" style={{ color: "#E4785F" }}>
@@ -181,8 +173,7 @@ export default function ContactForm() {
           rows={6}
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? "message-error" : undefined}
-          className="mt-3 w-full resize-y bg-transparent px-0 py-3 outline-none"
-          style={fieldStyle}
+          className="field mt-3"
         />
         {errors.message && (
           <p id="message-error" className="mt-2 text-sm" style={{ color: "#E4785F" }}>

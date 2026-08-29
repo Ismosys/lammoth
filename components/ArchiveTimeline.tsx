@@ -73,7 +73,7 @@ export default function ArchiveTimeline({ releases }: { releases: Release[] }) {
             refs.current[i] = el;
           }}
           aria-labelledby={`era-${release.slug}`}
-          className="relative flex min-h-[92svh] items-center py-24"
+          className="relative flex min-h-[auto] items-center py-20 lg:min-h-[92svh] lg:py-24"
           style={archiveVars(release.theme)}
         >
           <div className="shell grid w-full items-center gap-12 lg:grid-cols-12 lg:gap-16">

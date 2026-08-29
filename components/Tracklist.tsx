@@ -43,7 +43,7 @@ export default function Tracklist({ release }: { release: Release }) {
                 onMouseLeave={() => setActive(null)}
                 onFocus={() => setActive(track.position)}
                 onBlur={() => setActive(null)}
-                className="group relative flex items-center gap-5 py-6 transition-colors duration-500 sm:gap-8 sm:py-7"
+                className="group relative flex items-start gap-4 py-5 transition-colors duration-500 sm:items-center sm:gap-8 sm:py-7"
                 style={{
                   borderBottom: "1px solid var(--line)",
                   background: isActive
@@ -52,7 +52,7 @@ export default function Tracklist({ release }: { release: Release }) {
                 }}
               >
                 <span
-                  className="shrink-0 font-mono text-xs tabular-nums transition-colors duration-300"
+                  className="shrink-0 pt-1.5 font-mono text-xs tabular-nums transition-colors duration-300 sm:pt-0"
                   style={{
                     color: isActive ? "var(--accent)" : "var(--muted)",
                     minWidth: "2ch",
@@ -99,15 +99,19 @@ export default function Tracklist({ release }: { release: Release }) {
                   )}
                 </span>
 
+                {/* Duration aligns to the first line so a wrapped title does not
+                    push it out of line on a narrow screen. */}
                 <span
-                  className="label shrink-0 transition-opacity duration-300"
+                  className="label shrink-0 pt-1.5 tabular-nums transition-opacity duration-300 sm:pt-0"
                   style={{ opacity: isActive ? 0 : 1 }}
                 >
                   {formatDuration(track.duration)}
                 </span>
 
+                {/* Hover affordance only. Hidden on touch, where there is no
+                    hover and it would sit on top of the title. */}
                 <span
-                  className="label absolute right-0 shrink-0 transition-opacity duration-300"
+                  className="label absolute right-0 hidden shrink-0 transition-opacity duration-300 sm:block"
                   style={{
                     opacity: isActive ? 1 : 0,
                     color: "var(--accent)",
@@ -127,7 +131,7 @@ export default function Tracklist({ release }: { release: Release }) {
           href={release.bandcampUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline underline-offset-4 transition-colors duration-300 hover:text-[var(--accent)]"
+          className="tap underline underline-offset-4 transition-colors duration-300 hover:text-[var(--accent)]"
         >
           Listen to {release.title} there
         </a>

@@ -135,7 +135,8 @@ a {
 
   .label {
     font-family: var(--font-sans), sans-serif;
-    font-size: 0.6875rem;
+    /* 11px reads fine on a desktop monitor and too small on a phone. */
+    font-size: 0.75rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     font-weight: 500;
@@ -176,6 +177,52 @@ a {
     margin: 0;
   }
 
+  /* ---------- Form fields ----------
+     Underlined rather than boxed, but with a real target height and a faint
+     surface so the field is perceivable on a phone. */
+
+  .field {
+    width: 100%;
+    background: color-mix(in srgb, var(--paper) 4%, transparent);
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--paper);
+    font-size: 1rem;
+    padding: 0.9rem 0.75rem;
+    min-height: 3rem;
+    outline: none;
+    transition: border-color var(--dur-fast) var(--ease),
+      background var(--dur-fast) var(--ease);
+  }
+
+  .field:hover {
+    background: color-mix(in srgb, var(--paper) 7%, transparent);
+  }
+
+  .field:focus {
+    border-bottom-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 6%, transparent);
+  }
+
+  .field::placeholder {
+    color: color-mix(in srgb, var(--paper) 42%, transparent);
+  }
+
+  textarea.field {
+    min-height: 9rem;
+    resize: vertical;
+  }
+
+  /* Gives small inline and list links a real touch target without changing
+     how they look. */
+  .tap {
+    display: inline-flex;
+    align-items: center;
+    /* Guarantees the 44px touch target rather than approximating it
+       with padding that shifts as the line height changes. */
+    min-height: 2.75rem;
+  }
+
   /* ---------- Buttons ---------- */
 
   .btn {
@@ -197,6 +244,13 @@ a {
   .btn:hover {
     background: transparent;
     color: var(--accent);
+  }
+
+  @media (max-width: 380px) {
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
   }
 
   .btn-ghost {

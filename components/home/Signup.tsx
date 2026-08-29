@@ -94,11 +94,7 @@ export default function Signup() {
                   onChange={(e) => setEmail(e.target.value)}
                   aria-describedby="signup-feedback"
                   aria-invalid={state === "error"}
-                  className="flex-1 bg-transparent px-0 py-4 text-lg outline-none transition-colors duration-300"
-                  style={{
-                    borderBottom: "1px solid var(--line)",
-                    color: "var(--paper)",
-                  }}
+                  className="field flex-1"
                   placeholder="you@example.com"
                 />
                 <button

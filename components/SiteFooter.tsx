@@ -27,12 +27,12 @@ export default function SiteFooter() {
 
           <nav aria-label="Footer">
             <p className="label mb-5">Navigate</p>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col">
               {nav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm transition-colors duration-300 hover:text-[var(--accent)]"
+                    className="tap text-sm transition-colors duration-300 hover:text-[var(--accent)]"
                   >
                     {item.label}
                   </Link>
@@ -43,14 +43,14 @@ export default function SiteFooter() {
 
           <div>
             <p className="label mb-5">Follow</p>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col">
               {socials.map((s) => (
                 <li key={s.label}>
                   <a
                     href={s.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm transition-colors duration-300 hover:text-[var(--accent)]"
+                    className="tap text-sm transition-colors duration-300 hover:text-[var(--accent)]"
                   >
                     {s.label}
                   </a>

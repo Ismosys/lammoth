@@ -212,7 +212,7 @@ export default async function ReleasePage({ params }: Props) {
                         href={c.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="transition-colors duration-300 hover:text-[var(--accent)]"
+                        className="tap transition-colors duration-300 hover:text-[var(--accent)]"
                       >
                         {c.name}
                       </a>

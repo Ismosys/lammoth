@@ -179,7 +179,7 @@ export default function AboutPage() {
                         href={c.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="transition-colors duration-300 hover:text-[var(--accent)]"
+                        className="tap transition-colors duration-300 hover:text-[var(--accent)]"
                       >
                         {c.name}
                       </a>
@@ -198,7 +198,7 @@ export default function AboutPage() {
               Based in {site.location}.{" "}
               <Link
                 href="/contact"
-                className="underline underline-offset-4 transition-colors duration-300 hover:text-[var(--accent)]"
+                className="tap underline underline-offset-4 transition-colors duration-300 hover:text-[var(--accent)]"
               >
                 Get in touch
               </Link>
