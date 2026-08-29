@@ -173,7 +173,7 @@ export default function Hero() {
                 priority
                 sizes="(max-width: 1024px) 90vw, 46vw"
                 className="w-full"
-                style={{ boxShadow: "0 40px 120px rgba(0,0,0,0.6)" }}
+                style={{ boxShadow: "var(--shadow-art)" }}
               />
             </div>
           </motion.div>

@@ -34,14 +34,19 @@ export default function SiteHeader() {
 
   return (
     <>
+      {/*
+        The header is fixed outside every page's themed subtree, so it cannot
+        inherit a release palette. It carries the shell ground as a solid
+        masthead band instead, which keeps it legible over both the parchment
+        shell and the dark release pages underneath.
+      */}
       <header
-        className="fixed inset-x-0 top-0 z-50 transition-colors duration-500"
+        className="fixed inset-x-0 top-0 z-50 transition-shadow duration-500"
         style={{
-          background: lifted
-            ? "color-mix(in srgb, var(--ground) 88%, transparent)"
-            : "transparent",
-          backdropFilter: lifted ? "blur(14px)" : "none",
+          background: "var(--ground)",
+          color: "var(--paper)",
           borderBottom: `1px solid ${lifted ? "var(--line)" : "transparent"}`,
+          boxShadow: lifted ? "0 10px 30px rgba(74, 52, 26, 0.10)" : "none",
         }}
       >
         <div className="shell flex items-center justify-between gap-6 py-5">

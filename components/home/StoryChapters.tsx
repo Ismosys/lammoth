@@ -46,7 +46,7 @@ function Chapter({ chapter, index }: { chapter: StoryChapter; index: number }) {
             aria-hidden="true"
             style={{
               background:
-                "linear-gradient(to top, color-mix(in srgb, var(--ground) 78%, transparent), transparent 60%)",
+                "linear-gradient(to top, color-mix(in srgb, var(--ground) 42%, transparent), transparent 58%)",
             }}
           />
         </div>

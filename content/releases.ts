@@ -73,6 +73,8 @@ export const releases: Release[] = [
       raised: "#15170F",
       paper: "#EFE8D3",
       atmosphere: "Open meadow, high sun, distant hills",
+      tint: "#f2ead8",
+      accentOnLight: "#9c4f1e",
     },
     featured: true,
   },
@@ -134,6 +136,8 @@ export const releases: Release[] = [
       raised: "#101618",
       paper: "#DCE6E5",
       atmosphere: "Deep cavern, still cold air, no horizon",
+      tint: "#e7ebea",
+      accentOnLight: "#1f5f5a",
     },
   },
   {
@@ -170,6 +174,8 @@ export const releases: Release[] = [
       raised: "#13150D",
       paper: "#E4E3D2",
       atmosphere: "Wet forest floor, low light through leaves",
+      tint: "#edeada",
+      accentOnLight: "#4f5622",
     },
   },
   {
@@ -213,6 +219,8 @@ export const releases: Release[] = [
       raised: "#101722",
       paper: "#DCE4EE",
       atmosphere: "Moonlit night, cold blue, high walls",
+      tint: "#e7e9ef",
+      accentOnLight: "#2c4f73",
     },
   },
   {
@@ -247,6 +255,8 @@ export const releases: Release[] = [
       raised: "#0F1611",
       paper: "#DDE6DC",
       atmosphere: "Closed canopy, deep green, no path",
+      tint: "#e7ebe6",
+      accentOnLight: "#2e5238",
     },
   },
 ];

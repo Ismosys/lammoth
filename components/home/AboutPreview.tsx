@@ -17,14 +17,14 @@ export default function AboutPreview() {
                 height={1200}
                 sizes="(max-width: 1024px) 92vw, 40vw"
                 className="w-full object-cover"
-                style={{ boxShadow: "0 30px 90px rgba(0,0,0,0.55)" }}
+                style={{ boxShadow: "var(--shadow-art)" }}
               />
               <div
                 className="pointer-events-none absolute inset-0"
                 aria-hidden="true"
                 style={{
                   background:
-                    "linear-gradient(to top, color-mix(in srgb, var(--ground) 50%, transparent) 0%, transparent 45%)",
+                    "linear-gradient(to top, color-mix(in srgb, var(--ground) 30%, transparent) 0%, transparent 45%)",
                 }}
               />
             </div>

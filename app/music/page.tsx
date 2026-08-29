@@ -46,7 +46,7 @@ export default function MusicPage() {
                 sizes="(max-width: 1024px) 92vw, 40vw"
                 priority
                 className="w-full"
-                style={{ boxShadow: "0 30px 90px rgba(0,0,0,0.55)" }}
+                style={{ boxShadow: "var(--shadow-art)" }}
               />
             </Reveal>
             <div className="flex flex-col justify-center lg:col-span-6 lg:col-start-7">

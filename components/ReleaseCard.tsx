@@ -40,7 +40,7 @@ export default function ReleaseCard({ release }: { release: Release }) {
           className="absolute inset-0 transition-opacity duration-500"
           aria-hidden="true"
           style={{
-            opacity: hover ? 0.16 : 0.42,
+            opacity: hover ? 0.02 : 0.10,
             background:
               "linear-gradient(to top, var(--ground) 8%, transparent 70%)",
           }}

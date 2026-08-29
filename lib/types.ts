@@ -21,6 +21,14 @@ export type ReleaseTheme = {
   paper: string;
   /** Short human description of the atmosphere, shown in the archives timeline. */
   atmosphere: string;
+  /**
+   * Light variants, used where a release appears against the parchment shell
+   * rather than in its own dark room. The archives timeline uses these so each
+   * era still shifts the page without turning the whole run black.
+   */
+  tint: string;
+  /** Accent dark enough to hold contrast on the tint above. */
+  accentOnLight: string;
 };
 
 export type Track = {

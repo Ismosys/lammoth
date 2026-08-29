@@ -16,17 +16,24 @@
 */
 
 :root {
-  /* Shell defaults. Onward is the current era, so its palette leads. */
-  --void: #08090610;
-  --ground: #0b0c08;
-  --deep: #0b0c08;
-  --raised: #15170f;
-  --paper: #efe8d3;
-  --muted: #8b8a76;
-  --line: #23261b;
+  /*
+    Shell palette, taken from the Onward cover: parchment ground, bark ink,
+    with the rust and moss accents darkened so they hold contrast on a light
+    surface. Release pages override these per era, so the dark catalogue keeps
+    its own identity and the shell stays warm around it.
+  */
+  --ground: #f2ead8;
+  --deep: #f2ead8;
+  --raised: #e8dec7;
+  --paper: #241a10;
+  --muted: #6b5f4b;
+  --line: #d8ccb0;
 
-  --accent: #d98a46;
-  --accent-2: #8ca84a;
+  --accent: #9c4f1e;
+  --accent-2: #4a5d22;
+
+  /* Artwork shadow. Warm and soft on parchment, deepened on dark release pages. */
+  --shadow-art: 0 30px 80px rgba(74, 52, 26, 0.24);
 
   /* One easing curve for the whole site. */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -214,8 +221,9 @@ a {
   inset: 0;
   z-index: 60;
   pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
+  opacity: 0.035;
+  /* Multiply keeps the grain reading as tooth in the paper on a light ground. */
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
 }
 
