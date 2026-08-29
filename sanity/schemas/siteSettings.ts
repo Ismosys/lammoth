@@ -10,6 +10,13 @@ export const siteSettings = {
     { name: "description", title: "Site description", type: "text", rows: 3 },
     { name: "location", title: "Location", type: "string" },
     {
+      name: "contactEmail",
+      title: "Public contact email",
+      type: "string",
+      description:
+        "Shown on the contact page. Use only an address intended to be public.",
+    },
+    {
       name: "socials",
       title: "Official links",
       type: "array",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import Reveal from "@/components/Reveal";
-import { socials } from "@/content/site";
+import { site, socials } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -34,8 +34,21 @@ export default function ContactPage() {
           </div>
 
           <aside className="lg:col-span-4 lg:col-start-9">
+            <Reveal delay={0.06}>
+              <p className="label">Direct</p>
+              <a
+                href={`mailto:${site.contactEmail}`}
+                className="mt-4 block break-all text-lg transition-colors duration-300 hover:text-[var(--accent)]"
+              >
+                {site.contactEmail}
+              </a>
+              <p className="body-copy mt-3 text-sm">
+                If you would rather not use the form.
+              </p>
+            </Reveal>
+
             <Reveal delay={0.1}>
-              <p className="label">Elsewhere</p>
+              <p className="label mt-12">Elsewhere</p>
               <ul className="mt-6 flex flex-col gap-4">
                 {socials.map((s) => (
                   <li key={s.label}>

@@ -13,6 +13,8 @@ export const site = {
   description:
     "Official home of Lammoth, an atmospheric black metal and blackgaze project from Asheville. Listen to the album Onward, explore the archives, and follow the journey.",
   location: "Asheville",
+  /* Published by the artist in their own public Bandcamp profile. */
+  contactEmail: "lammoth.usbm@gmail.com",
 } as const;
 
 export const nav = [
@@ -99,6 +101,7 @@ export const about = {
     alt: "Lammoth photographed outdoors, standing against a dense wall of green foliage in a black battle vest and cap.",
   },
   artist: [
+    "Lammoth is Robert Sanford, credited with all instruments across the catalogue.",
     "Across the catalogue the credits stay short. Lammoth writes the music and lyrics, plays the instruments, and handles the mixing. Outside help arrives only where it is genuinely needed: mastering, additional sound design, cover artwork.",
     "That shape has held from the first single in 2024 through to Onward. It is a project run at a scale where one person can keep hold of every decision.",
   ],
